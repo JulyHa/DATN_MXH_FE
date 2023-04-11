@@ -25,9 +25,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/custom-theme.scss",
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/js/libs.min.js",
+              "src/assets/js/slider.js",
+              "src/assets/js/masonry.pkgd.min.js",
+              "src/assets/js/enchanter.js",
+              "src/assets/js/sweetalert.js",
+              "src/assets/js/charts/weather-chart.js",
+              "src/assets/js/app.js",
+              "src/assets/js/lottie.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -51,7 +61,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -89,10 +105,20 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/js/libs.min.js",
+              "src/assets/js/slider.js",
+              "src/assets/js/masonry.pkgd.min.js",
+              "src/assets/js/enchanter.js",
+              "src/assets/js/sweetalert.js",
+              "src/assets/js/charts/weather-chart.js",
+              "src/assets/js/app.js",
+              "src/assets/js/lottie.js"]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "57bd9789-4340-45f9-a389-4eb06cb689ce"
   }
 }
