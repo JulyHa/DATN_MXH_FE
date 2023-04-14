@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {LoginComponent} from './login/login.component';
+import {LoginComponent} from './controller/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {NgImageSliderModule} from "ng-image-slider";
@@ -18,7 +18,7 @@ import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
 import {ToastrModule} from "ngx-toastr";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {NgxPaginationModule} from "ngx-pagination";
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './controller/register/register.component';
 @NgModule({
   declarations: [
     AppComponent,

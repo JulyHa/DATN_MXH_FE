@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Users} from "../model/Users";
-import {UserService} from "../service/user.service";
+import {Users} from "../../model/Users";
+import {UserService} from "../../service/user/user.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 import {async} from "rxjs";
