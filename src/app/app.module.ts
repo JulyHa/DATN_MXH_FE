@@ -19,11 +19,29 @@ import {ToastrModule} from "ngx-toastr";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {NgxPaginationModule} from "ngx-pagination";
 import { RegisterComponent } from './controller/register/register.component';
+import { NewfeedComponent } from './controller/newsfeed/newfeed.component';
+import { EditProfileComponent } from './controller/edit-profile/edit-profile.component';
+import { ErrorComponent } from './controller/error/error.component';
+import { FriendProfileComponent } from './controller/friend-profile/friend-profile.component';
+import { MessageComponent } from './controller/message/message.component';
+import { PostDetailComponent } from './controller/post-detail/post-detail.component';
+import { PrivacySettingComponent } from './controller/privacy-setting/privacy-setting.component';
+import { ProfileComponent } from './controller/profile/profile.component';
+import { SearchFriendComponent } from './controller/search-friend/search-friend.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NewfeedComponent,
+    EditProfileComponent,
+    ErrorComponent,
+    FriendProfileComponent,
+    MessageComponent,
+    PostDetailComponent,
+    PrivacySettingComponent,
+    ProfileComponent,
+    SearchFriendComponent
   ],
   imports: [
     NgxPaginationModule,

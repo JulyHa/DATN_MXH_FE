@@ -38,31 +38,31 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.user = this.loginForm.value;
+    // @ts-ignore
+    this.user.checkOn = true
     new Promise<boolean>((resolve, reject) => {
       this.userService.checkEmailAndPass(this.user).subscribe(() => {
-        console.log("check true")
         resolve(true);
       }, (error: HttpErrorResponse) => {
-        console.log("check false")
         if (error.status === 400) {
           resolve(false);
         }
       });
     }).then((res) => {
-      console.log(res)
       if (res) {
         new Promise<boolean>((resolve, reject) => {
-          this.userService.login(this.user).subscribe(user => {
-            console.log("login t")
-            window.localStorage.setItem("user", JSON.stringify(user));
+          this.userService.login(this.user).subscribe(data => {
+            console.log(data)
+            window.localStorage.setItem("user", JSON.stringify(data.users));
+            window.localStorage.setItem("token", data.token);
             resolve(true);
           }, () => {
-            console.log("login t")
             resolve(false);
           });
         }).then((res) => {
           if(res) {
             this.success()
+            this.router.navigate(['/newsfeed']);
           } else {
             this.warning();
           }
