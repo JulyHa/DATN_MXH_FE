@@ -495,31 +495,32 @@
                                 <div class="d-flex  justify-content-between">
                                   <div class="">
                                     <h5 class="mb-0 d-inline-block">{{p?.users?.firstName+" "+p?.users?.lastName}}</h5>
-
-                                    <p class="mb-0 text-primary">{{timeMoment[i].replace('an year', '1y')
-                                      .replace('a year', '1y')
-                                      .replace('years', 'y')
-                                      .replace('an month', '1M')
-                                      .replace('a month', '1M')
-                                      .replace('months', 'M')
-                                      .replace('a week', '1w')
-                                      .replace('weeks', 'w')
-                                      .replace('a day', '1d')
-                                      .replace('days', 'd')
-                                      .replace('an hour', '1h')
-                                      .replace('a hour', '1h')
-                                      .replace('hours', 'h')
-                                      .replace('a minute', '1m')
-                                      .replace('minutes', 'm')
-                                      .replace('a second', '1s')
-                                      .replace(' ago', '')}} - {{p?.postStatus?.name}}</p>
+                                    <p>
+                                      <a routerLink="/post-detail/{{p.id}}" class="mb-0 text-primary">{{timeMoment[i].replace('an year', '1y')
+                                        .replace('a year', '1y')
+                                        .replace('years', 'y')
+                                        .replace('an month', '1M')
+                                        .replace('a month', '1M')
+                                        .replace('months', 'M')
+                                        .replace('a week', '1w')
+                                        .replace('weeks', 'w')
+                                        .replace('a day', '1d')
+                                        .replace('days', 'd')
+                                        .replace('an hour', '1h')
+                                        .replace('a hour', '1h')
+                                        .replace('hours', 'h')
+                                        .replace('a minute', '1m')
+                                        .replace('minutes', 'm')
+                                        .replace('a second', '1s')
+                                        .replace(' ago', '')}} - <span style="color: gray">{{p?.postStatus?.name}}</span></a>
+                                    </p>
                                   </div>
 
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="mt-3">
+                          <div>
                             <p style="margin-left: 10px">{{p?.content}}</p>
                           </div>
                           <div *ngIf="listImg[i]?.length > 0">
@@ -600,14 +601,11 @@
                                      placeholder="Enter Your Comment">
                               <div class="comment-attagement d-flex">
                                 <button style="border:none #8f8b8b;background:none;font-size: 20px;margin-right: 10px"
-                                        type="submit"><i style="color: #0495ff;background: none"
-                                                         class="ri-send-plane-2-line"></i>
+                                        type="submit"><i style="color: #0495ff;background: none"class="ri-send-plane-2-line"></i>
                                 </button>
                               </div>
                             </form>
                           </div>
-
-
                           <div style="margin-top: 20px">
                             <ul class="post-comments list-inline p-0 m-0">
                               <li *ngFor="let comment of listAllComment[i] , index as j" [hidden]="j >= numToShow"
@@ -626,7 +624,7 @@
                                           <span style="color: #0a0a0a;padding: 0px">{{comment.users.firstName+" "+comment.users.lastName}}</span>
                                           <div>
                                             <p
-                                              style="margin-top: -5px;max-width: 590px;word-break: break-all;padding: 0px 10px 3px 10px;"
+                                              style="margin-top: -5px;max-width: 590px;word-break: break-word;padding: 0 10px 3px 10px;"
                                               class="row mb-0">{{comment.content}}</p>
                                           </div>
                                         </div>
@@ -665,7 +663,7 @@
                                           <span style="color: #0a0a0a;padding: 0px">{{comment.users.firstName+" "+comment.users.lastName}}</span>
                                           <div>
                                             <p
-                                              style="margin-top: -5px;max-width: 590px;word-break: break-all;padding: 0px 30px 3px 10px;"
+                                              style="margin-top: -5px;max-width: 590px;word-break: break-word;padding: 0px 30px 3px 10px;"
                                               class="row mb-0">{{comment.content}}</p>
                                           </div>
                                         </div>

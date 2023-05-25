@@ -444,10 +444,9 @@ export class ProfileComponent implements OnInit {
   }
 
   addComment(post: Post) {
-
     const postComment = this.commentForm.value
     postComment.users = this.user
-    postComment.post = post
+    postComment.posts = post
 
     this.postService.addComment(postComment).subscribe(() => {
       this.findPostAllProfile()

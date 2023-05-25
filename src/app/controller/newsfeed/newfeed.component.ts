@@ -206,7 +206,6 @@ export class NewfeedComponent implements OnInit {
     // @ts-ignore
     this.userService.findAllFriend(this.user.id).subscribe((data) => {
       this.listFriend = data
-      console.log(data)
       this.getAllNotification()
     })
   }
@@ -436,7 +435,7 @@ export class NewfeedComponent implements OnInit {
     // @ts-ignore
     this.userService.findListRequestFriend(this.user.id).subscribe((data) => {
       this.listRequest = data
-
+      console.log(this.listRequest)
     })
   }
 

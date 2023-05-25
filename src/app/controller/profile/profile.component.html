@@ -307,27 +307,6 @@
                 </div>
                 <div class="profile-info p-3 d-flex align-items-center justify-content-between position-relative">
                   <div class="social-links">
-<!--                    <ul class="social-data-block d-flex align-items-center justify-content-between list-inline p-0 m-0">-->
-<!--                      <li class="text-center pe-3">-->
-<!--                        <a href="#"><img src="  assets/images/icon/08.png" class="img-fluid rounded" alt="facebook"></a>-->
-<!--                      </li>-->
-<!--                      <li class="text-center pe-3">-->
-<!--                        <a href="#"><img src="  assets/images/icon/09.png" class="img-fluid rounded" alt="Twitter"></a>-->
-<!--                      </li>-->
-<!--                      <li class="text-center pe-3">-->
-<!--                        <a href="#"><img src="  assets/images/icon/10.png" class="img-fluid rounded"-->
-<!--                                         alt="Instagram"></a>-->
-<!--                      </li>-->
-<!--                      <li class="text-center pe-3">-->
-<!--                        <a href="#"><img src="  assets/images/icon/11.png" class="img-fluid rounded" alt="Google plus"></a>-->
-<!--                      </li>-->
-<!--                      <li class="text-center pe-3">-->
-<!--                        <a href="#"><img src="  assets/images/icon/12.png" class="img-fluid rounded" alt="You tube"></a>-->
-<!--                      </li>-->
-<!--                      <li class="text-center md-pe-3 pe-0">-->
-<!--                        <a href="#"><img src="  assets/images/icon/13.png" class="img-fluid rounded" alt="linkedin"></a>-->
-<!--                      </li>-->
-<!--                    </ul>-->
                   </div>
                   <div style="width: 100px;margin-right: 230px" class="social-info">
                     <div class="iq-search-bar device-search">
@@ -462,76 +441,6 @@
                       <div class="modal fade" id="post-modal" tabindex="-1" aria-labelledby="post-modalLabel"
                            aria-hidden="true">
                         <div class="modal-dialog  modal-fullscreen-sm-down">
-<!--                          <div class="modal-content">-->
-<!--                            <div class="modal-header">-->
-<!--                              <h5 class="modal-title" id="post-modalLabel">Create Post</h5>-->
-<!--                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i-->
-<!--                                class="ri-close-fill"></i></button>-->
-<!--                            </div>-->
-<!--                            <div class="modal-body">-->
-<!--                              <div class="d-flex align-items-center">-->
-<!--                                <div class="user-img">-->
-<!--                                  <img src="{{user.avatar}}" alt="userimg" class="avatar-60 rounded-circle img-fluid">-->
-<!--                                </div>-->
-<!--                                <form class="post-text ms-3 w-100" action="">-->
-<!--                                  <input type="text" class="form-control rounded" placeholder="Write something here..."-->
-<!--                                         style="border:none;">-->
-<!--                                </form>-->
-<!--                              </div>-->
-<!--                              <hr>-->
-<!--                              <ul style="height: 200px" class="d-flex flex-wrap list-inline m-0 p-0">-->
-<!--                                <li style="margin-right: 70px; margin-top: 5px" class="col-md-1 mb-3">-->
-<!--                                  <div style="width: 100px" class="btn btn-soft-primary">-->
-<!--                                    <label for="image-post"><img alt="" src="assets/images/small/07.png">-->
-<!--                                      Photo</label>-->
-<!--                                    <input class="file-upload" id="image-post" type="file" multiple-->
-<!--                                           (change)="submitAvatar($event)"/>-->
-<!--                                  </div>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                  <div class="dropdown">-->
-<!--                                       <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"-->
-<!--                                             aria-expanded="false" role="button">-->
-<!--                                       <span style="margin-top: 5px" class="btn btn-primary ">Friend</span>-->
-<!--                                       </span>-->
-<!--                                    <div class="dropdown-menu m-0 p-0">-->
-<!--                                      <a class="dropdown-item p-3" href="#">-->
-<!--                                        <div class="d-flex align-items-end">-->
-<!--                                          <i class="ri-save-line h4"></i>-->
-<!--                                          <div class="data ms-2">-->
-<!--                                            <h6>Public</h6>-->
-<!--                                            <p class="mb-0">Anyone on or off Facebook</p>-->
-<!--                                          </div>-->
-<!--                                        </div>-->
-<!--                                      </a>-->
-<!--                                      <a class="dropdown-item p-3" href="#">-->
-<!--                                        <div class="d-flex align-items-end">-->
-<!--                                          <i class="ri-close-circle-line h4"></i>-->
-<!--                                          <div class="data ms-2">-->
-<!--                                            <h6>Friends</h6>-->
-<!--                                            <p class="mb-0">Your Friend on facebook</p>-->
-<!--                                          </div>-->
-<!--                                        </div>-->
-<!--                                      </a>-->
-<!--                                      <a class="dropdown-item p-3" href="#">-->
-<!--                                        <div class="d-flex align-items-end">-->
-<!--                                          <i class="ri-notification-line h4"></i>-->
-<!--                                          <div class="data ms-2">-->
-<!--                                            <h6>Only Me</h6>-->
-<!--                                            <p class="mb-0">Only me</p>-->
-<!--                                          </div>-->
-<!--                                        </div>-->
-<!--                                      </a>-->
-<!--                                    </div>-->
-<!--                                  </div>-->
-<!--                                </li>-->
-<!--                              </ul>-->
-
-<!--                              <hr>-->
-
-<!--                              <button type="submit" class="btn btn-primary d-block w-100 mt-3">Post</button>-->
-<!--                            </div>-->
-<!--                          </div>-->
                           <div class="modal-content">
                             <div class="modal-header">
                               <h5 class="modal-title" id="post-modalLabel">Create Post</h5>
@@ -697,27 +606,26 @@
                                 <div class="d-flex  justify-content-between">
                                   <div class="">
                                     <h5 class="mb-0 d-inline-block" style="cursor: pointer">{{p?.users?.firstName + " " + p?.users?.lastName}}</h5>
-<!--                                    <span *ngIf="p?.postStatus?.id === 1" style="color: #0d6efd"> &nbsp; Public</span>-->
-<!--                                    <span *ngIf="p?.postStatus?.id === 2" style="color: #0d6efd"> &nbsp; Private </span>-->
-<!--                                    <span *ngIf="p?.postStatus?.id === 3" style="color: #0d6efd"> &nbsp; Friend Only </span>-->
+                                    <p>
+                                      <a routerLink="/post-detail/{{p.id}}" class="mb-0 text-primary">{{timeMoment[i].replace('an year', '1y')
+                                        .replace('a year', '1y')
+                                        .replace('years', 'y')
+                                        .replace('an month', '1M')
+                                        .replace('a month', '1M')
+                                        .replace('months', 'M')
+                                        .replace('a week', '1w')
+                                        .replace('weeks', 'w')
+                                        .replace('a day', '1d')
+                                        .replace('days', 'd')
+                                        .replace('an hour', '1h')
+                                        .replace('a hour', '1h')
+                                        .replace('hours', 'h')
+                                        .replace('a minute', '1m')
+                                        .replace('minutes', 'm')
+                                        .replace('a second', '1s')
+                                        .replace(' ago', '')}} - <span style="color: gray">{{p?.postStatus?.name}}</span></a>
+                                    </p>
 
-                                    <p class="mb-0 text-primary">{{timeMoment[i].replace('an year', '1y')
-                                      .replace('a year', '1y')
-                                      .replace('years', 'y')
-                                      .replace('an month', '1M')
-                                      .replace('a month', '1M')
-                                      .replace('months', 'M')
-                                      .replace('a week', '1w')
-                                      .replace('weeks', 'w')
-                                      .replace('a day', '1d')
-                                      .replace('days', 'd')
-                                      .replace('an hour', '1h')
-                                      .replace('a hour', '1h')
-                                      .replace('hours', 'h')
-                                      .replace('a minute', '1m')
-                                      .replace('minutes', 'm')
-                                      .replace('a second', '1s')
-                                      .replace(' ago', '')}} - {{p?.postStatus?.name}}</p>
                                   </div>
                                   <div class="card-post-toolbar">
                                     <div style="width: 50px" class="dropdown">
@@ -750,7 +658,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="mt-3">
+                          <div>
                             <p>{{p?.content}}</p>
                           </div>
                           <div *ngIf="listImg[i]?.length > 0">
@@ -785,7 +693,7 @@
                                       <div *ngIf="p.checkUserLiked" style="color: #5e5d5d">
                                            <span class="text-primary">
                                              Like&nbsp; <span class="text-primary"
-                                                              *ngIf="countLike[i] > 0">  {{countLike[i]}}</span>
+                                             *ngIf="countLike[i] > 0">  {{countLike[i]}}</span>
                                           </span>
                                       </div>
                                       <div *ngIf="!p.checkUserLiked" style="color: #5e5d5d">
@@ -795,19 +703,19 @@
                                       </div>
                                       <div class="dropdown-menu">
                                         <a *ngFor="let f of listFriendPost[i]" class="dropdown-item"
-                                           href="#">{{f.firstName +" "+f.lastName}}</a>
+                                        routerLink="/friend-profile/{{f.id}}">{{f.firstName +" "+f.lastName}}</a>
                                       </div>
                                     </div>
                                     <div *ngIf="listFriendPost[i].length < 1">
                                       <div *ngIf="p.checkUserLiked" style="color: #5e5d5d">
                                            <span class="text-primary">
-                                             Like&nbsp; <span class="text-primary"
-                                                              *ngIf="countLike[i] > 0">  {{countLike[i]}}</span>
+                                             Like&nbsp;<span class="text-primary"
+                                             *ngIf="countLike[i] > 0">  {{countLike[i]}}</span>
                                           </span>
                                       </div>
                                       <div *ngIf="!p.checkUserLiked" style="color: #5e5d5d">
                                            <span>
-                                             Like&nbsp; <span *ngIf="countLike[i] > 0">  {{countLike[i]}}</span>
+                                             Like&nbsp;<span *ngIf="countLike[i] > 0">  {{countLike[i]}}</span>
                                           </span>
                                       </div>
 
@@ -858,7 +766,7 @@
                                           <span style="color: #0a0a0a;padding: 0px">{{comment.users.firstName+" "+ comment.users.lastName}}</span>
                                           <div>
                                             <p
-                                              style="margin-top: -5px;max-width: 590px;word-break: break-all;padding: 0px 10px 3px 10px;"
+                                              style="margin-top: -5px;max-width: 590px;word-break: break-word;padding: 0px 10px 3px 10px;"
                                               class="row mb-0">{{comment.content}}</p>
                                           </div>
                                         </div>
@@ -897,7 +805,7 @@
                                           <span style="color: #0a0a0a;padding: 0px">{{comment.users.firstName + " " + comment.users.lastName}}</span>
                                           <div>
                                             <p
-                                              style="margin-top: -5px;max-width: 590px;word-break: break-all;padding: 0px 30px 3px 10px;"
+                                              style="margin-top: -5px;max-width: 590px;word-break: break-word;padding: 0px 30px 3px 10px;"
                                               class="row mb-0">{{comment.content}}</p>
                                           </div>
                                         </div>

@@ -61,7 +61,7 @@
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a href="#" class="dropdown-toggle" id="group-drop" data-bs-toggle="dropdown"
+              <a class="dropdown-toggle" id="group-drop" data-bs-toggle="dropdown"
                  aria-haspopup="true" aria-expanded="false">
                 <i class="ri-group-line"></i>
                 <small *ngIf="listRequest.length > 0" style="font-size: 10px;padding: 2px 4px 2px 4px;margin-left: -8px"
@@ -94,20 +94,20 @@
                           <a (click)="confirmRequest(friendRequest.id)"
                              class="me-3 btn btn-danger rounded">Confirm</a>
                           <a (click)="deleteRequest(friendRequest.id)"
-                             class="me-3 btn btn-success rounded">Delete Request</a>
+                             class="me-3 btn btn-success rounded">Delete</a>
                         </div>
                       </div>
                     </div>
 
                     <div class="text-center">
-                      <a href="#" class=" btn text-primary">View More Request</a>
+                      <a class=" btn text-primary">View More Request</a>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a href="#" class="search-toggle   dropdown-toggle" id="notification-drop" data-bs-toggle="dropdown">
+              <a class="search-toggle   dropdown-toggle" id="notification-drop" data-bs-toggle="dropdown">
                 <i class="ri-notification-4-line"></i>
                 <small *ngIf="countNotSeen > 0" style="font-size: 10px;padding: 2px 4px 2px 4px;margin-left: -8px"
                        class="bg-danger rounded-circle text-white">{{countNotSeen}}</small>
@@ -170,7 +170,7 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a href="#" class="dropdown-toggle" id="mail-drop" data-bs-toggle="dropdown" aria-haspopup="true"
+              <a class="dropdown-toggle" id="mail-drop" data-bs-toggle="dropdown" aria-haspopup="true"
                  aria-expanded="false">
                 <i class="ri-messenger-line"></i>
               </a>
@@ -452,12 +452,13 @@
                       <div class="d-flex  justify-content-between">
                         <div class="">
                           <h5 *ngIf="p?.users?.id === user.id" style="cursor: pointer" routerLink="/profile"
-                              class="mb-0 d-inline-block">{{p?.users?.firstName + " " + p?.users?.lastName}}</h5>
+                              class="mb-0 d-inline-block">{{p?.users?.firstName + " " + p?.users?.lastName}}
+                          </h5>
                           <h5 *ngIf="p?.users?.id !== user.id" style="cursor: pointer"
                               routerLink="/friend-profile/{{p?.users?.id}}"
-                              class="mb-0 d-inline-block">{{p?.users?.firstName + " " + p?.users?.lastName}}</h5>
-
-                          <p class="mb-0 text-primary">{{timeMoment[i].replace('an year', '1y')
+                              class="mb-0 d-inline-block">{{p?.users?.firstName + " " + p?.users?.lastName}}
+                          </h5>
+                          <p> <a routerLink="/post-detail/{{p.id}}" class="mb-0 text-primary">{{timeMoment[i].replace('an year', '1y')
                             .replace('a year', '1y')
                             .replace('years', 'y')
                             .replace('an month', '1M')
@@ -473,7 +474,8 @@
                             .replace('a minute', '1m')
                             .replace('minutes', 'm')
                             .replace('a second', '1s')
-                            .replace(' ago', '')}} - <span>{{p?.postStatus?.name}}</span> </p>
+                            .replace(' ago', '')}} - <span style="color: gray">{{p?.postStatus?.name}}</span> </a>
+                          </p>
 
                         </div>
 
@@ -481,7 +483,7 @@
                     </div>
                   </div>
                 </div>
-                <div style="margin-left: 3px" class="mt-3">
+                <div style="margin-left: 3px">
                   <p>{{p?.content}}</p>
                 </div>
                 <div *ngIf="listImg[i]?.length > 0">
@@ -524,7 +526,7 @@
                             </div>
                             <div class="dropdown-menu">
                               <a *ngFor="let f of listFriendPost[i]" class="dropdown-item"
-                                 href="#">{{f.firstName + " " + f.lastName}}</a>
+                                 routerLink="/friend-profile/{{f.id}}">{{f.firstName + " " + f.lastName}}</a>
                             </div>
                           </div>
                           <div *ngIf="listFriendPost[i].length < 1">
@@ -587,15 +589,9 @@
 
 
                                   <p
-                                    style="margin-top: -5px;max-width: 590px;word-break: break-all;padding: 0px 10px 3px 10px;"
+                                    style="margin-top: -5px;max-width: 590px;word-break: break-word;padding: 0px 10px 3px 10px;"
                                     class="row mb-0">{{comment.content}}
                                   </p>
-                                  <!--                                  <p [ngClass]="{'collapsed': !showFullContent}" [style.min-height.px]="maxHeight"  style="margin-top: -5px;max-width: 590px;word-break: break-all;padding: 0px 10px 3px 10px;"-->
-                                  <!--                                     class="row mb-0">{{comment.content}}-->
-                                  <!--                                  </p>-->
-                                  <!--                                  <button (click)="toggleShowFullContent()">-->
-                                  <!--                                    {{ showFullContent ? 'Read Less' : 'Read More' }}-->
-                                  <!--                                  </button>-->
                                 </div>
                               </div>
                             </div>
@@ -636,7 +632,7 @@
                                   style="color: #0a0a0a;padding: 0px">{{comment.users.firstName + " " + comment.users.lastName}}</span>
                                 <div>
                                   <p
-                                    style="margin-top: -5px;max-width: 590px;word-break: break-all;padding: 0px 30px 3px 10px;"
+                                    style="margin-top: -5px;max-width: 590px;word-break: break-word;padding: 0px 30px 3px 10px;"
                                     class="row mb-0">{{comment.content}}</p>
                                 </div>
                               </div>
@@ -775,51 +771,37 @@
 
         </div>
         <div class="col-lg-2 col-xl-4 col-xxl-3  ps-lg-0">
-          <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3">
-            <div class="card-body d-flex align-items-center p-4">
+          <div class="card w-100 shadow-xss rounded-xxl border-0 mb-3 scroll-bar" style="height: 600px">
+            <div class="card-body d-flex p-4">
               <h4 class="fw-700 mb-0 font-xssss text-grey-900">
                 Friend Request
               </h4>
-              <a href="default-member.html"
-                 class="fw-600 ms-auto font-xssss text-primary"
-              >See all</a>
             </div>
-            <div class="card-body d-flex pt-4 ps-4 pe-4 pb-0 border-top-xs bor-0">
-              <figure class="avatar me-3">
-                <img
-                  src="images2/user-7.png"
-                  alt="image"
-                  class="shadow-sm rounded-circle w45"
-                />
-              </figure>
-              <h4 class="fw-700 text-grey-900 font-xssss mt-1" style="display: flex; align-items: center">
-                Anthony Daugloi
-              </h4>
+            <div *ngFor="let request of listRequest ">
+              <div >
+                <div class="card-body d-flex pt-4 ps-4 pe-4 pb-0 border-top-xs bor-0" >
+                  <figure class="avatar me-3">
+                    <img
+                      style="height: 45px"
+                      src="{{request.avatar}}"
+                      alt="image"
+                      class="shadow-sm rounded-circle w45"
+                    />
+                  </figure>
+                  <h4 class="fw-500 text-grey-900 font-xsss" style="display: flex; margin-top:15px;"
+                    routerLink="/friend-profile/{{request.id}}">
+                    {{request.firstName + " " + request.lastName}}
+                  </h4>
+                </div>
+                <div class="card-body d-flex align-items-center pt-0 ps-4 pe-4 pb-4">
+                  <a (click)="confirmRequest(request.id)"
+                     class="p-2 lh-20 w100 bg-blue-gradiant me-2 text-white text-center font-xssss fw-600 ls-1 rounded-xl">Confirm</a>
+                  <a (click)="deleteRequest(request.id)"
+                     class="p-2 lh-20 w100 bg-grey text-black text-center font-xssss fw-600 ls-1 rounded-xl">Delete</a>
+                </div>
+              </div>
             </div>
-            <div class="card-body d-flex align-items-center pt-0 ps-4 pe-4 pb-4">
-              <a href="#"
-                 class="p-2 lh-20 w100 bg-blue-gradiant me-2 text-white text-center font-xssss fw-600 ls-1 rounded-xl">Confirm</a>
-              <a href="#"
-                 class="p-2 lh-20 w100 bg-grey text-black text-center font-xssss fw-600 ls-1 rounded-xl">Delete</a>
-            </div>
-            <div class="card-body d-flex pt-4 ps-4 pe-4 pb-0 border-top-xs bor-0">
-              <figure class="avatar me-3">
-                <img
-                  src="images2/user-7.png"
-                  alt="image"
-                  class="shadow-sm rounded-circle w45"
-                />
-              </figure>
-              <h4 class="fw-700 text-grey-900 font-xssss mt-1" style="display: flex; align-items: center">
-                Anthony Daugloi
-              </h4>
-            </div>
-            <div class="card-body d-flex align-items-center pt-0 ps-4 pe-4 pb-4">
-              <a href="#"
-                 class="p-2 lh-20 w100 bg-blue-gradiant me-2 text-white text-center font-xssss fw-600 ls-1 rounded-xl">Confirm</a>
-              <a href="#"
-                 class="p-2 lh-20 w100 bg-grey text-black text-center font-xssss fw-600 ls-1 rounded-xl">Delete</a>
-            </div>
+
           </div>
 
           <div class="card w-100 shadow-xss rounded-xxl border-0 p-0">
@@ -852,48 +834,6 @@
           </div>
         </div>
       </div>
-
-    </div>
-  </div>
-
-</div>
-
-
-<!-- offcanvas start -->
-
-<div class="offcanvas offcanvas-bottom share-offcanvas" tabindex="-1" id="share-btn"
-     aria-labelledby="shareBottomLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="shareBottomLabel">Share</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body small">
-    <div class="d-flex flex-wrap align-items-center">
-      <div class="text-center me-3 mb-3">
-        <img src="assets/images/icon/08.png" class="img-fluid rounded mb-2" alt="">
-        <h6>Facebook</h6>
-      </div>
-      <div class="text-center me-3 mb-3">
-        <img src="assets/images/icon/09.png" class="img-fluid rounded mb-2" alt="">
-        <h6>Twitter</h6>
-      </div>
-      <div class="text-center me-3 mb-3">
-        <img src="assets/images/icon/10.png" class="img-fluid rounded mb-2" alt="">
-        <h6>Instagram</h6>
-      </div>
-      <div class="text-center me-3 mb-3">
-        <img src="assets/images/icon/11.png" class="img-fluid rounded mb-2" alt="">
-        <h6>Google Plus</h6>
-      </div>
-      <div class="text-center me-3 mb-3">
-        <img src="assets/images/icon/13.png" class="img-fluid rounded mb-2" alt="">
-        <h6>In</h6>
-      </div>
-      <div class="text-center me-3 mb-3">
-        <img src="assets/images/icon/12.png" class="img-fluid rounded mb-2" alt="">
-        <h6>YouTube</h6>
-      </div>
     </div>
   </div>
 </div>
-
