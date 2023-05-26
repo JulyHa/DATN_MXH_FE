@@ -16,7 +16,10 @@
             </a>
           </li>
           <li class="">
-            <a routerLink="/message" class=" ">
+<!--            <a routerLink="/message" class=" ">-->
+<!--              <i style="font-size: 18px" class="ri-messenger-line"></i><span>Message</span>-->
+<!--            </a>-->
+            <a (click)="onLogin('superhero1')" class=" ">
               <i style="font-size: 18px" class="ri-messenger-line"></i><span>Message</span>
             </a>
           </li>
@@ -313,7 +316,7 @@
             </a>
           </li>
           <li>
-            <a routerLink="/message"
+            <a (click)="onLogin('superhero1')"
                class="nav-content-bttn open-font">
               <i class="btn-round-md bg-gold-gradiant me-3">
                 <img width="20px" height="20px" src="assets/images/message.ico" alt="mess">
@@ -637,10 +640,7 @@
                                 </div>
                               </div>
                             </div>
-
                           </div>
-
-
                         </div>
                       </div>
                       <div style="margin-left: 70px">

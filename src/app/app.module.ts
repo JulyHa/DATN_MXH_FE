@@ -28,6 +28,8 @@ import { PostDetailComponent } from './controller/post-detail/post-detail.compon
 import { PrivacySettingComponent } from './controller/privacy-setting/privacy-setting.component';
 import { ProfileComponent } from './controller/profile/profile.component';
 import { SearchFriendComponent } from './controller/search-friend/search-friend.component';
+import {CometChatUI} from "../cometchat-pro-angular-ui-kit/CometChatWorkspace/src/components/CometChatUI/CometChat-Ui/cometchat-ui.module";
+import {CometChatAvatar} from "../cometchat-pro-angular-ui-kit/CometChatWorkspace/src/components/Shared/CometChat-avatar/cometchat-avatar.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +66,8 @@ import { SearchFriendComponent } from './controller/search-friend/search-friend.
     SweetAlert2Module,
     FormsModule,
     MatPaginatorModule,
+    CometChatAvatar,
+    CometChatUI,
   ],
   providers: [],
   bootstrap: [AppComponent]

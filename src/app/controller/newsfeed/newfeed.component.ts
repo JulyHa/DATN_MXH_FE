@@ -17,6 +17,7 @@ import {UserService} from "../../service/user/user.service";
 import {Stomp} from "@stomp/stompjs";
 import {NotificationService} from 'src/app/service/notification/notification.service';
 import {ChatService} from 'src/app/service/chat/chat.service';
+import {CometChat} from "@cometchat-pro/chat";
 
 @Component({
   selector: 'app-newfeed',
@@ -523,6 +524,25 @@ export class NewfeedComponent implements OnInit {
         }
       })
     })
+  }
+
+  onLoginError: boolean = false;
+  errorMsg: string = "";
+
+  onLogin(UID: any) {
+    //@ts-ignore
+    CometChat.login(UID, COMETCHAT_CONSTANTS.AUTH_KEY).then(
+      (user) => {
+        console.log("Login Successful:", {user});
+        this.router.navigate(["/message"]);
+      },
+      (error) => {
+        //@ts-ignore
+        console.log("Login failed with exception:", {error});
+        this.onLoginError = true;
+        this.errorMsg = error.message;
+      }
+    );
   }
 
   success(): void {

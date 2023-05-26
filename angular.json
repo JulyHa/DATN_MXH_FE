@@ -27,7 +27,9 @@
             "styles": [
               "src/custom-theme.scss",
               "src/styles.css",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/@ctrl/ngx-emoji-mart/picker.css",
+              "src/cometchat-pro-angular-ui-kit/CometChatWorkspace/src/css/styles.scss"
             ],
             "scripts": ["src/assets/js/libs.min.js",
               "src/assets/js/slider.js",
